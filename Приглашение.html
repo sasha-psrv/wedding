@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Александр и Александра — 15.08.2026</title>
+<style>
+  :root{
+    --bg:#ffb9fa;
+    --card:#ffffff;
+    --accent:#1f2937;
+    --muted:#7b8490;
+    --accent-soft:#e9eef2;
+    --primary:#2b6cb0;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;
+    color:var(--accent);
+    background-color:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    /* фоновое изображение */
+    background-image:url('bg.jpg');
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+  }
+  /* затемняющий оверлей для контраста */
+  .bg-overlay{
+    position:fixed;inset:0;background:rgba(10,12,15,0.45);pointer-events:none;z-index:0;
+  }
+  .wrap{max-width:980px;margin:36px auto;padding:28px;position:relative;z-index:1}
+  header{display:flex;gap:20px;align-items:center}
+  .photo{width:500px;height:500px;border-radius:16px;object-fit:cover;box-shadow:0 6px 18px rgba(16,24,40,0.06);border:1px solid var(--accent-soft)}
+  h1{margin:0;font-weight:100;font-size:30px;letter-spacing:0.2px;color:#fcfcfc;text-shadow:0 2px 10px #fff;}
+  .names{display:flex;align-items:center;gap:12px}
+  .heart{width:40px;height:40;border-radius:10px;background:linear-gradient(135deg,#ffd7e6,#ffe8f0);display:flex;align-items:center;justify-content:center;color:#a83b5b;font-weight:700}
+  .meta{color:#fee8f0;margin-top:6px;font-size:14px}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.92));padding:20px;border-radius:14px;margin-top:20px;box-shadow:0 8px 30px rgba(15,23,42,0.12)}
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:18px;align-items:start}
+  .section-title{font-size:15px;margin:0 0 8px 0;color:var(--accent)}
+  .line{height:1px;background:linear-gradient(90deg,transparent,var(--accent-soft),transparent);margin:12px 0;border-radius:2px}
+  .info{color:var(--muted);font-size:15px;line-height:1.45}
+  .btn{display:inline-block;padding:10px 14px;background:var(--primary);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;margin-top:10px;box-shadow:0 6px 18px rgba(43,108,176,0.12);border:none;cursor:pointer}
+  .map{width:100%;height:220px;border:0;border-radius:10px}
+  form label{display:block;font-size:14px;color:var(--accent);margin-top:10px}
+  input[type="text"],input[type="email"],select,textarea{width:100%;padding:10px;margin-top:8px;border:1px solid #e6e9ee;border-radius:10px;background:#fbfdff}
+  textarea{resize:vertical}
+  .footer-note{color:var(--muted);font-size:13px;text-align:center;margin-top:18px}
+  .music-control{position:fixed;right:20px;bottom:20px;background:rgba(255,255,255,0.98);border-radius:12px;padding:10px 12px;box-shadow:0 10px 30px rgba(15,23,42,0.12);display:flex;gap:8px;align-items:center;border:1px solid var(--accent-soft);z-index:2}
+  .icon{width:40px;height:40;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent);font-weight:700}
+  .toggle{background:transparent;border:none;color:var(--primary);cursor:pointer;font-weight:600;padding:8px;border-radius:8px}
+  .small{font-size:13px;color:var(--muted)}
+  .gift-list{display:flex;flex-direction:column;gap:8px}
+  .gift{padding:10px;border-radius:10px;border:1px solid #eef3f7;background:#fff}
+  .rsvp{display:flex;flex-direction:column;gap:8px}
+  .seconds{font-size:13px;color:var(--muted)}
+  /* адаптив */
+  @media(max-width:920px){
+    .grid{grid-template-columns:1fr}
+    header{flex-direction:row;gap:16px}
+    .photo{width:100px;height:100px}
+    .music-control{right:12px;left:12px;bottom:14px;justify-content:space-between}
+  }
+</style>
+</head>
+<body>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header>
+      <img src="photo.jpg" alt="Александр и Александра" class="photo">
+      <div>
+        <div class="names">
+          <h1>Александр и Александра</h1>
+          <div class="heart">❤️</div>
+        </div>
+        <div class="meta">15 августа 2026 • Воронеж, Белый колодец</div>
+      </div>
+    </header>
+
+    <div class="card" role="main">
+      <div class="grid">
+        <div>
+          <h3 class="section-title">О паре</h3>
+          <div class="info">
+            Мы познакомились в университете и пронесли любовь сквозь годы. Приглашаем вас разделить с нами этот важный день.
+          </div>
+
+          <div class="line"></div>
+
+          <h3 class="section-title">Программа</h3>
+          <div class="info">
+            12:00 — Торжественная церемония в Белом колодце<br>
+            15:00 — Банкет и празднование<br>
+            20:00 — Танцы и фейерверк<br>
+            Просим гостей прибыть за 20 минут до начала церемонии.
+          </div>
+
+          <div class="line"></div>
+
+          <h3 class="section-title">Подарки</h3>
+          <div class="gift-list">
+            <div class="gift"><strong>Список желаний</strong><br class="small">Если хотите — можно внести на карту или выбрать подарок из списка.</div>
+            <div class="gift"><strong>Благотворительность</strong><br class="small">Часть подарков пойдет на поддержку местного приюта.</div>
+          </div>
+
+          <div class="line"></div>
+
+          <h3 class="section-title">Анкета</h3>
+          <form id="rsvp" class="rsvp" onsubmit="event.preventDefault();submitRsvp()">
+            <label>Ваше имя и фамилия<input type="text" id="guestName" required placeholder="Иван Иванов"></label>
+            <label>Сможете ли вы присутствовать на нашем дне?</label>
+            <fieldset><label class="t-radio__control" style="font-size: 16px; font-weight: 400; color: rgb(0, 0, 0); font-family: Georgia;"><input type="radio" value="С удовольствием приду" class="t-radio js-tilda-rule" name="Сможете ли Вы присутствовать на нашем дне?" aria-label="Сможете ли Вы присутствовать на нашем дне?" data-tilda-req="1"><div class="t-radio__indicator"></div><span>С удовольствием приду</span></label><label class="t-radio__control" style="font-size: 16px; font-weight: 400; color: rgb(0, 0, 0); font-family: Georgia;"><input type="radio" value="К сожалению, не смогу присутствовать" class="t-radio js-tilda-rule" name="Сможете ли Вы присутствовать на нашем дне?" aria-label="Сможете ли Вы присутствовать на нашем дне?" data-tilda-req="1"><div class="t-radio__indicator"></div><span>К сожалению, не смогу присутствовать</span></label><label class="t-radio__control" style="font-size: 16px; font-weight: 400; color: rgb(0, 0, 0); font-family: Georgia;"><input type="radio" value="Сообщу позже" class="t-radio js-tilda-rule" name="Сможете ли Вы присутствовать на нашем дне?" aria-label="Сможете ли Вы присутствовать на нашем дне?" data-tilda-req="1"><div class="t-radio__indicator"></div><span>Сообщу позже</span></label></fieldset>
+            <label>Что вы предпочитаете?</label>
+            <fieldset><label class="t-radio__control" style="font-size: 16px; font-weight: 400; color: rgb(0, 0, 0); font-family: Georgia;"><input type="radio" value="Вино" class="t-radio js-tilda-rule" name="Сможете ли Вы присутствовать на нашем дне?" aria-label="Сможете ли Вы присутствовать на нашем дне?" data-tilda-req="1"><div class="t-radio__indicator"></div><span>Вино</span></label><label class="t-radio__control" style="font-size: 16px; font-weight: 400; color: rgb(0, 0, 0); font-family: Georgia;"><input type="radio" value="Шампанское" class="t-radio js-tilda-rule" name="Сможете ли Вы присутствовать на нашем дне?" aria-label="Сможете ли Вы присутствовать на нашем дне?" data-tilda-req="1"><div class="t-radio__indicator"></div><span>Шампанское</span></label><label class="t-radio__control" style="font-size: 16px; font-weight: 400; color: rgb(0, 0, 0); font-family: Georgia;"><input type="radio" value="Сообщу позже" class="t-radio js-tilda-rule" name="Сможете ли Вы присутствовать на нашем дне?" aria-label="Сможете ли Вы присутствовать на нашем дне?" data-tilda-req="1"><div class="t-radio__indicator"></div><span>Коньяк</span></label></fieldset>
+            <label>Электронная почта<input type="email" id="guestEmail" required placeholder="email@example.com"></label>
+            <label>Количество гостей<select id="guestCount"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+            <button class="btn" type="submit">Подтвердить посещение</button>
+            <div id="rsvpMsg" class="small" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <aside>
+          <div style="margin-bottom:12px">
+            <h3 class="section-title">Место</h3>
+            <div class="info">Белый колодец, Воронеж</div>
+            <!-- вставьте ссылку на Google Maps при необходимости -->
+            <iframe class="map" src="https://www.google.com/maps?q=Воронеж+Белый+колодец+ Глэмпинг&output=embed" loading="lazy" aria-hidden="false"></iframe>
+          </div>
+
+          <div style="margin-bottom:12px">
+            <h3 class="section-title">Контакты</h3>
+            <div class="info">Тел: +7 (999) 218-52-94<br>Email: pisarevasas@yandex.ru</div>
+          </div>
+
+          <div>
+            <h3 class="section-title">Примечание</h3>
+            <div class="info small">Пожалуйста, сообщите о пищевой аллергии в RSVP.</div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="line"></div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div class="footer-note">Ждем вас с радостью • 15.08.2026</div>
+        <div class="seconds" id="countdown" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Музыка и управление -->
+  <div class="music-control" role="region" aria-label="Музыкальный плеер">
+    <div class="icon" id="playIcon">♪</div>
+    <div>
+      <div style="font-weight:700">Фоновая музыка</div>
+      <div class="small" id="musicState">Загрузка…</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;margin-left:8px">
+      <button class="toggle" id="togglePlay" title="Воспроизведение">Плей</button>
+      <label style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px">
+        <input type="checkbox" id="autoplayToggle"> Авто
+      </label>
+    </div>
+  </div>
+
+  <audio id="bgAudio" src="song.mp3" loop preload="auto"></audio>
+
+<script>
+  // Музыкальный контрол
+  const audio = document.getElementById('bgAudio');
+  const toggleBtn = document.getElementById('togglePlay');
+  const musicState = document.getElementById('musicState');
+  const playIcon = document.getElementById('playIcon');
+  const autoplayToggle = document.getElementById('autoplayToggle');
+
+  // Попробуем автозапуск, но учтём ограничения браузера
+  function tryAutoplay(){
+    const wantAuto = localStorage.getItem('wedding_autoplay');
+    autoplayToggle.checked = wantAuto !== 'false'; // по умолчанию включено
+    if (!autoplayToggle.checked) {
+      musicState.textContent = 'Автозапуск отключён';
+      return;
+    }
+    audio.play().then(()=> {
+      musicState.textContent = 'Играет';
+      playIcon.textContent = '♪';
+      toggleBtn.textContent = 'Пауза';
+    }).catch(()=> {
+      musicState.textContent = 'Нажмите Плей для звука';
+      toggleBtn.textContent = 'Плей';
+      playIcon.textContent = '♪';
+    });
+  }
+
+  toggleBtn.addEventListener('click', ()=> {
+    if (audio.paused) {
+      audio.play().then(()=> {
+        musicState.textContent = 'Играет';
+        toggleBtn.textContent = 'Пауза';
+      }).catch(()=> {
+        musicState.textContent = 'Воспроизведение заблокировано';
+      });
+    } else {
+      audio.pause();
+      musicState.textContent = 'Пауза';
+      toggleBtn.textContent = 'Плей';
+    }
+  });
+
+  autoplayToggle.addEventListener('change', ()=> {
+    localStorage.setItem('wedding_autoplay', autoplayToggle.checked ? 'true' : 'false');
+    if (autoplayToggle.checked) tryAutoplay();
+  });
+
+  // загрузка состояния
+  audio.addEventListener('playing', ()=> {
+    musicState.textContent = 'Играет';
+    toggleBtn.textContent = 'Пауза';
+  });
+  audio.addEventListener('pause', ()=> {
+    musicState.textContent = 'Пауза';
+    toggleBtn.textContent = 'Плей';
+  });
+  audio.addEventListener('error', ()=> {
+    musicState.textContent = 'Ошибка загрузки аудио';
+  });
+
+  // Попытка автозапуска после первой загрузки
+  document.addEventListener('DOMContentLoaded', ()=> {
+    tryAutoplay();
+    startCountdown();
+  });
+
+  // Простая функция RSVP (локально)
+  function submitRsvp(){
+    const name = document.getElementById('guestName').value.trim();
+    const email = document.getElementById('guestEmail').value.trim();
+    const count = document.getElementById('guestCount').value;
+    const msg = document.getElementById('rsvpMsg');
+    if(!name || !email){ msg.textContent = 'Пожалуйста, заполните имя и email.'; return; }
+    // Для простоты сохраняем в localStorage
+    const entries = JSON.parse(localStorage.getItem('wedding_rsvp')||'[]');
+    entries.push({name,email,count,date:new Date().toISOString()});
+    localStorage.setItem('wedding_rsvp',JSON.stringify(entries));
+    msg.textContent = 'Спасибо! Ваш ответ сохранён.';
+    document.getElementById('rsvp').reset();
+  }
+
+  // Отображение таймера до события
+  function startCountdown(){
+    const target = new Date('2026-08-15T12:00:00'); // начало церемонии
+    const el = document.getElementById('countdown');
+    function tick(){
+      const now = new Date();
+      const diff = target - now;
+      if(diff<=0){ el.textContent = 'Событие уже началось!'; clearInterval(timer); return; }
+      const days = Math.floor(diff/86400000);
+      const hours = Math.floor((diff%86400000)/3600000);
+      const mins = Math.floor((diff%3600000)/60000);
+      const secs = Math.floor((diff%60000)/1000);
+      el.textContent = days+' д ' + hours+' ч ' + mins+' м ' + secs+' с до церемонии';
+    }
+    tick();
+    const timer = setInterval(tick,1000);
+  }
+</script>
+</body>
+</html>
